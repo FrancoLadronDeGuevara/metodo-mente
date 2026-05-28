@@ -1,0 +1,93 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+@theme {
+  --color-bg: #f5f0e8;
+  --color-surface: #fefcf8;
+  --color-primary: #2b4590;
+  --color-accent: #e8a020;
+  --color-secondary: #4a7c59;
+  --color-text: #1e1e2e;
+  --color-text-muted: #5a5a72;
+  --color-border: #d6cfc0;
+
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-mono: "Space Mono", "Courier New", monospace;
+  --font-body: "Space Grotesk", "Inter", system-ui, sans-serif;
+}
+
+.dark {
+  --color-bg: #0f1523;
+  --color-surface: #1a2540;
+  --color-primary: #5b7fd4;
+  --color-accent: #f0b030;
+  --color-secondary: #6baf80;
+  --color-text: #ede8dc;
+  --color-text-muted: #9aaac8;
+  --color-border: #2e3e6a;
+}
+
+/* ── Global Base ─────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-text);
+}
+
+/* ── Scrollbar ───────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border: 2px solid var(--color-bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* ── CTA hover sweep (needs pseudo-element, can't do purely in Tailwind) ── */
+.cta-sweep {
+  position: relative;
+  overflow: hidden;
+}
+.cta-sweep::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-accent);
+  transition: left 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 0;
+}
+.cta-sweep:hover::before {
+  left: 0;
+}
+
+/* ── Scroll indicator animation (keyframes needed) ── */
+@keyframes scroll-pulse {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+.animate-scroll-pulse {
+  animation: scroll-pulse 2s ease-in-out infinite;
+}
