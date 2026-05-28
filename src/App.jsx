@@ -4,6 +4,8 @@ import Navbar from "./components/Navbar/Navbar";
 import HeroSection from "./components/HeroSection/HeroSection";
 import WhyMethod from "./components/WhyMethod/WhyMethod";
 import StudyMethods from "./components/StudyMethods/StudyMethods";
+import StudyQuiz from "./components/StudyQuiz/StudyQuiz";
+import Testimonials from "./components/Testimonials/Testimonials";
 import Footer from "./components/Footer/Footer";
 
 /* Placeholder sections for scroll-spy targets */
@@ -67,11 +69,14 @@ function App() {
         <TrackedSection id="metodos" onInView={setActiveSection}>
           <StudyMethods />
         </TrackedSection>
-        <TrackedSection
-          id="beneficios"
-          label="Beneficios"
-          onInView={setActiveSection}
-        />
+
+        <TrackedSection id="quiz" onInView={setActiveSection}>
+          <StudyQuiz />
+        </TrackedSection>
+
+        <TrackedSection id="beneficios" onInView={setActiveSection}>
+          <Testimonials />
+        </TrackedSection>
         <TrackedSection
           id="recursos"
           label="Recursos"
