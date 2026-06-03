@@ -206,13 +206,16 @@ export default function StudyMethods() {
     >
       <div className="max-w-[1280px] mx-auto">
         {/* Double academic separation rule */}
-        <div className="flex flex-col gap-1 mb-16 max-md:mb-10" aria-hidden="true">
+        <div
+          className="flex flex-col gap-1 mb-16 max-md:mb-10"
+          aria-hidden="true"
+        >
           <span className="h-[3px] bg-text" />
           <span className="h-px bg-border" />
         </div>
 
         {/* Section Header */}
-        <div ref={headerRef} className="mb-16 max-w-[760px] max-md:mb-10">
+        <div ref={headerRef} className="mb-16 max-md:mb-10">
           <motion.div
             className="inline-flex items-center gap-3 mb-6 py-1.5 px-4 border-2 border-border font-mono text-[0.65rem] font-bold tracking-[0.2em] uppercase text-text-muted"
             initial={{ opacity: 0, x: -20 }}
@@ -272,7 +275,8 @@ export default function StudyMethods() {
         >
           <span className="h-px flex-1 bg-border max-md:w-full" />
           <p className="font-mono text-[0.65rem] text-text-muted tracking-wider uppercase italic shrink-0">
-            Adopta una metodología a la vez para permitir la adaptación cognitiva
+            Adopta una metodología a la vez para permitir la adaptación
+            cognitiva
           </p>
           <span className="h-px flex-1 bg-border max-md:hidden" />
         </motion.div>

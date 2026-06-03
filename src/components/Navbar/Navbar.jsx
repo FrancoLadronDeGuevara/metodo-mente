@@ -6,11 +6,11 @@ import logo from "../../assets/logo.png";
 
 const NAV_LINKS = [
   { label: "Inicio", href: "#inicio" },
+  { label: "Importancia", href: "#importancia" },
   { label: "Métodos", href: "#metodos" },
   { label: "Diagnóstico", href: "#quiz" },
-  { label: "Beneficios", href: "#beneficios" },
+  { label: "Testimonios", href: "#testimonios" },
   { label: "Recursos", href: "#recursos" },
-  { label: "Contacto", href: "#contacto" },
 ];
 
 export default function Navbar({ activeSection }) {

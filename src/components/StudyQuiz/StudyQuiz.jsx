@@ -115,7 +115,8 @@ const QUESTIONS = [
   },
   {
     id: 5,
-    question: "¿Cuál es tu ventana ideal de preparación antes de una evaluación?",
+    question:
+      "¿Cuál es tu ventana ideal de preparación antes de una evaluación?",
     options: [
       {
         text: "Sesiones de productividad concentrada en el día a día para evitar fatiga.",
@@ -264,19 +265,25 @@ export default function StudyQuiz() {
     }
   };
 
-  const progressPercentage = ((currentQuestion) / QUESTIONS.length) * 100;
+  const progressPercentage = (currentQuestion / QUESTIONS.length) * 100;
 
   return (
-    <section id="quiz" className="relative py-24 px-8 max-md:py-16 max-md:px-5">
-      <div className="max-w-[800px] mx-auto">
+    <section
+      id="quiz"
+      className="relative max-w-[1280px] mx-auto py-24 px-8 max-md:py-16 max-md:px-5"
+    >
+      <div className="mx-auto">
         {/* Double brutalist academic rule */}
-        <div className="flex flex-col gap-1 mb-16 max-md:mb-10" aria-hidden="true">
+        <div
+          className="flex flex-col gap-1 mb-16 max-md:mb-10"
+          aria-hidden="true"
+        >
           <span className="h-[3px] bg-text" />
           <span className="h-px bg-border" />
         </div>
 
         {/* Section Header */}
-        <div className="mb-12 max-w-[720px]">
+        <div className="mb-12">
           <div className="inline-flex items-center gap-3 mb-6 py-1.5 px-4 border-2 border-border font-mono text-[0.65rem] font-bold tracking-[0.2em] uppercase text-text-muted">
             <span className="text-accent">§ III</span>
             <span>Evaluación Cognitiva</span>
@@ -291,9 +298,10 @@ export default function StudyQuiz() {
           </h2>
 
           <p className="font-body text-[clamp(0.95rem,1.5vw,1.15rem)] leading-relaxed text-text-muted border-l-4 border-l-accent pl-5">
-            Responde honestamente a este test de diagnóstico de 5 preguntas basado en tus hábitos
-            actuales, y nuestro sistema identificará la metodología académica que desbloqueará
-            tu máximo potencial intelectual.
+            Responde honestamente a este test de diagnóstico de 5 preguntas
+            basado en tus hábitos actuales, y nuestro sistema identificará la
+            metodología académica que desbloqueará tu máximo potencial
+            intelectual.
           </p>
         </div>
 
@@ -311,13 +319,22 @@ export default function StudyQuiz() {
               >
                 {/* Progress bar and counter */}
                 <div className="flex items-center justify-between font-mono text-xs text-text-muted">
-                  <span>PREGUNTA {currentQuestion + 1} DE {QUESTIONS.length}</span>
-                  <span>{Math.round(((currentQuestion + 1) / QUESTIONS.length) * 100)}% COMPLETADO</span>
+                  <span>
+                    PREGUNTA {currentQuestion + 1} DE {QUESTIONS.length}
+                  </span>
+                  <span>
+                    {Math.round(
+                      ((currentQuestion + 1) / QUESTIONS.length) * 100,
+                    )}
+                    % COMPLETADO
+                  </span>
                 </div>
                 <div className="w-full h-1.5 bg-bg border border-border">
                   <div
                     className="h-full bg-accent transition-all duration-300"
-                    style={{ width: `${((currentQuestion + 1) / QUESTIONS.length) * 100}%` }}
+                    style={{
+                      width: `${((currentQuestion + 1) / QUESTIONS.length) * 100}%`,
+                    }}
                   />
                 </div>
 
@@ -378,16 +395,18 @@ export default function StudyQuiz() {
                     Protocolo Recomendado de Inicio:
                   </h4>
                   <ul className="list-none flex flex-col gap-3 p-0 m-0">
-                    {METHOD_DETAILS[recommendedMethod].recommendations.map((rec, idx) => (
-                      <li key={idx} className="flex gap-3 items-start">
-                        <span className="font-mono text-[0.65rem] font-bold text-accent shrink-0 pt-0.5">
-                          [0{idx + 1}]
-                        </span>
-                        <p className="font-body text-xs text-text-muted leading-relaxed">
-                          {rec}
-                        </p>
-                      </li>
-                    ))}
+                    {METHOD_DETAILS[recommendedMethod].recommendations.map(
+                      (rec, idx) => (
+                        <li key={idx} className="flex gap-3 items-start">
+                          <span className="font-mono text-[0.65rem] font-bold text-accent shrink-0 pt-0.5">
+                            [0{idx + 1}]
+                          </span>
+                          <p className="font-body text-xs text-text-muted leading-relaxed">
+                            {rec}
+                          </p>
+                        </li>
+                      ),
+                    )}
                   </ul>
                 </div>
 
@@ -397,7 +416,9 @@ export default function StudyQuiz() {
                     onClick={handleScrollToMethods}
                     className="cta-sweep flex-1 py-4 px-6 bg-primary text-surface font-mono text-xs font-bold uppercase tracking-widest border-2 border-primary cursor-pointer hover:border-accent hover:text-text"
                   >
-                    <span className="relative z-[1]">Ver Detalles del Método</span>
+                    <span className="relative z-[1]">
+                      Ver Detalles del Método
+                    </span>
                   </button>
 
                   <button
@@ -417,7 +438,8 @@ export default function StudyQuiz() {
         <div className="mt-12 flex items-center gap-4 max-md:flex-col max-md:items-start max-md:gap-2">
           <span className="h-px flex-1 bg-border max-md:w-full" />
           <p className="font-mono text-[0.65rem] text-text-muted tracking-wider uppercase italic shrink-0">
-            * Diagnóstico referencial de hábitos de estudio basados en rendimiento cognitivo
+            * Diagnóstico referencial de hábitos de estudio basados en
+            rendimiento cognitivo
           </p>
           <span className="h-px flex-1 bg-border max-md:hidden" />
         </div>

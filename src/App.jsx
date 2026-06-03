@@ -6,6 +6,7 @@ import WhyMethod from "./components/WhyMethod/WhyMethod";
 import StudyMethods from "./components/StudyMethods/StudyMethods";
 import StudyQuiz from "./components/StudyQuiz/StudyQuiz";
 import Testimonials from "./components/Testimonials/Testimonials";
+import Resources from "./components/Resources/Resources";
 import Footer from "./components/Footer/Footer";
 
 /* Placeholder sections for scroll-spy targets */
@@ -62,7 +63,7 @@ function App() {
       <main className="flex-1">
         <TrackedHero onInView={setActiveSection} />
 
-        <TrackedSection id="por-que" onInView={setActiveSection}>
+        <TrackedSection id="importancia" onInView={setActiveSection}>
           <WhyMethod />
         </TrackedSection>
 
@@ -74,19 +75,12 @@ function App() {
           <StudyQuiz />
         </TrackedSection>
 
-        <TrackedSection id="beneficios" onInView={setActiveSection}>
+        <TrackedSection id="testimonios" onInView={setActiveSection}>
           <Testimonials />
         </TrackedSection>
-        <TrackedSection
-          id="recursos"
-          label="Recursos"
-          onInView={setActiveSection}
-        />
-        <TrackedSection
-          id="contacto"
-          label="Contacto"
-          onInView={setActiveSection}
-        />
+        <TrackedSection id="recursos" onInView={setActiveSection}>
+          <Resources />
+        </TrackedSection>
       </main>
 
       <Footer />

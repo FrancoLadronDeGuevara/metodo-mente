@@ -91,3 +91,9 @@ body {
 .animate-scroll-pulse {
   animation: scroll-pulse 2s ease-in-out infinite;
 }
+
+/* ── Carousel progress bar ───────────────────────── */
+@keyframes carousel-progress {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}

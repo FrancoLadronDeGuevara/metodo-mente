@@ -103,7 +103,7 @@ export default function WhyMethod() {
 
   return (
     <section
-      id="por-que"
+      id="importancia"
       className="relative py-24 px-8 max-md:py-16 max-md:px-5"
     >
       {/* Section decorative border */}
@@ -118,7 +118,7 @@ export default function WhyMethod() {
         </div>
 
         {/* Header */}
-        <div ref={headerRef} className="mb-16 max-w-[720px] max-md:mb-10">
+        <div ref={headerRef} className="mb-16 max-md:mb-10">
           {/* Section label */}
           <motion.div
             className="inline-flex items-center gap-3 mb-6 py-1.5 px-4 border-2 border-border font-mono text-[0.65rem] font-bold tracking-[0.2em] uppercase text-text-muted"
